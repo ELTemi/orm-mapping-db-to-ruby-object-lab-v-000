@@ -37,6 +37,14 @@ class Student
     # return a new instance of the Student class
   end
 
+  def self.count_all_students_in_grade_9
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = ?
+    SQL
+  end
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
