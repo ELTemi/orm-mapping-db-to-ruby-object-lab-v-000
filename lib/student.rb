@@ -44,9 +44,7 @@ class Student
       WHERE grade = ?
     SQL
     binding.pry
-    DB[:conn].execute(sql, "9").map do |row|
-      self.new_from_db(row)
-    end
+    DB[:conn].execute(sql, "9")
   end
 
   def save
