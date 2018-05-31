@@ -43,7 +43,7 @@ class Student
       FROM students
       WHERE grade = ?
     SQL
-    #binding.pry
+  
     DB[:conn].execute(sql, "9")
   end
 
@@ -64,7 +64,7 @@ class Student
       INSERT INTO students (name, grade)
       VALUES (?, ?)
     SQL
-    
+
     DB[:conn].execute(sql, self.name, self.grade)
   end
 
