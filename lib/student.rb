@@ -27,11 +27,11 @@ class Student
       WHERE name = ?
       LIMIT 1
     SQL
-
+      binding.pry
     DB[:conn].execute(sql, name).map do |row|
       self.new_from_db(row)
     end
-    binding.pry
+  
     # find the student in the database given a name
     # return a new instance of the Student class
   end
