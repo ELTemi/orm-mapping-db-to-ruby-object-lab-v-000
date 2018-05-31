@@ -14,6 +14,7 @@ class Student
       SELECT *
       FROM students
     SQL
+    
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
     end
@@ -41,7 +42,7 @@ class Student
       grade TEXT
     )
     SQL
-
+    
     DB[:conn].execute(sql)
   end
 
@@ -49,4 +50,5 @@ class Student
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
   end
+
 end
